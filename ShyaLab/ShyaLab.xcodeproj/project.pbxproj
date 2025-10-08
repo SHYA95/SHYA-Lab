@@ -33,7 +33,7 @@
 		2A228C412E95A71A003CBF40 /* Exceptions for "ShyaLab" folder in "ShyaLab" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Resources/Info.plist,
 			);
 			target = 2A228C152E95A717003CBF40 /* ShyaLab */;
 		};
