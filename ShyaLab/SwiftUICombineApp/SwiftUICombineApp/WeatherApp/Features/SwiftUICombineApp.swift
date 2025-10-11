@@ -11,8 +11,6 @@ public struct SwiftUICombineAppView: View {
     public init() {}
     
     public var body: some View {
-        Text("Hello from SwiftAndCombineApp 🎉")
-            .font(.title)
-            .padding()
+        HomeView()
     }
 }

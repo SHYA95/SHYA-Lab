@@ -15,7 +15,8 @@ struct AppMainApp: App {
 
     var body: some Scene {
         WindowGroup {
-            SwiftUICombineAppView() // ✅ هنا بنشغل view من الموديول
+      //MARK: First module: Weather app (SwiftUI & Combine)
+            SwiftUICombineAppView()
         }
     }
 }

@@ -13,6 +13,9 @@
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
 		2A1D88AE2E9A650D0068538B /* Exceptions for "SwiftUICombineApp" folder in "SwiftUICombineApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				WeatherApp/Features/Home/HomeViewModel.swift,
+			);
 			publicHeaders = (
 				SwiftUICombineApp.h,
 			);
@@ -20,11 +23,22 @@
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		2A1D890E2E9A90450068538B /* Exceptions for "SwiftUICombineApp" folder in "Copy Bundle Resources" phase from "SwiftUICombineApp" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 2A1D88A52E9A650D0068538B /* Resources */;
+			membershipExceptions = (
+				WeatherApp/Features/Home/HomeViewModel.swift,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		2A1D88A92E9A650D0068538B /* SwiftUICombineApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				2A1D88AE2E9A650D0068538B /* Exceptions for "SwiftUICombineApp" folder in "SwiftUICombineApp" target */,
+				2A1D890E2E9A90450068538B /* Exceptions for "SwiftUICombineApp" folder in "Copy Bundle Resources" phase from "SwiftUICombineApp" target */,
 			);
 			path = SwiftUICombineApp;
 			sourceTree = "<group>";
