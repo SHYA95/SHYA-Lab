@@ -15,7 +15,7 @@ enum Constant {
     /// BaseURL for requests.
     //
     
-      static let baseURL = "https://api.football-data.org/v2/"
+      static let baseURL = "https://api.weatherstack.com/current?access_key={PASTE_YOUR_API_KEY_HERE}&query=New Delhi"
  
 }
 

@@ -9,7 +9,7 @@ import Foundation
 
 class Constants {
     static let API_AUTH_KEY = "X-Auth-Token"
-    static let API_AUTH_VALUE = "35a6a685ee424122990239e51c7ffc91"
+    static let API_AUTH_VALUE = "f41fb55930b309354e014b95441a3e0d"
     static let DATE_FROM = "dateFrom"
     static let DATE_TO = "dateTo"
     static let UTC_TIMEZONE = "UTC"
