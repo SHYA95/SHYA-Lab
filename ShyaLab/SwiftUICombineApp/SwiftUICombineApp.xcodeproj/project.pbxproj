@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2A1D89662E9ADA480068538B /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 2A1D89652E9ADA480068538B /* AlamofireDynamic */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		2A1D88A72E9A650D0068538B /* SwiftUICombineApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftUICombineApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -50,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A1D89662E9ADA480068538B /* AlamofireDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +108,7 @@
 			);
 			name = SwiftUICombineApp;
 			packageProductDependencies = (
+				2A1D89652E9ADA480068538B /* AlamofireDynamic */,
 			);
 			productName = SwiftUICombineApp;
 			productReference = 2A1D88A72E9A650D0068538B /* SwiftUICombineApp.framework */;
@@ -131,6 +137,9 @@
 			);
 			mainGroup = 2A1D889D2E9A650D0068538B;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				2A1D89642E9ADA480068538B /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2A1D88A82E9A650D0068538B /* Products */;
 			projectDirPath = "";
@@ -375,6 +384,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2A1D89642E9ADA480068538B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2A1D89652E9ADA480068538B /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A1D89642E9ADA480068538B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2A1D889E2E9A650D0068538B /* Project object */;
 }
