@@ -11,13 +11,17 @@ struct Header {
     static let shared = Header()
     private init() {}
     
-    func createHeader() -> [String: String] {
-        let headers: [String: String] = [
+    func getHeaders(additional: [String: String]? = nil) -> [String: String] {
+        var headers: [String: String] = [
             "Content-Type": "application/x-www-form-urlencoded",
             "Cache-Control": "no-cache",
-            "Authorization": "\(Constants.API_AUTH_VALUE)",
-            "X-Unfold-Goals": "true"
+            Constants.API_AUTH_KEY: Constants.API_AUTH_VALUE
         ]
+        
+        if let additional = additional {
+            headers.merge(additional) { (_, new) in new }
+        }
+        
         return headers
     }
 }

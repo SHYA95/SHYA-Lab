@@ -6,51 +6,60 @@
 //
 
 import Foundation
-import Alamofire
 
 class APIClient<T: TargetType> {
     
-    /// A generic method to perform requests with requestModels.
-    /// - Pa drameters:
-    ///   - target: It carries the data of the request you are performing.
-    ///   - param: It is the parameters to be sent with the request.
-    ///   - completion: That carries a success or failure response.
-    ///
-    func performRequest<M: Decodable, P: Encodable>(target: T, param: P?, completion: @escaping (Result<M, AppErrorType>) -> Void)  {
-        InternetReachability.shared.InternetConnectivity { [weak self] in
-            guard let self = self else { return }
-
-            /// Create request properties.
-            let url = target.baseURL + target.path
-            let method = HTTPMethod(rawValue: target.method.rawValue)
-            let headers: HTTPHeaders = [
-                Constants.API_AUTH_KEY: Constants.API_AUTH_VALUE]
-            let paramters = [Constants.DATE_FROM: Utilities.getcurrentDate(), Constants.DATE_TO: Utilities.getNextYearDate()]
-
-            /// Create AF request.
-            AF.request(url, method: method, parameters: paramters, encoder: URLEncodedFormParameterEncoder.default, headers: headers).responseDecodable(of: M.self) { response in
-               
-                debugPrint(response)
-
-                switch response.result {
-                case .success(let data):
-                    completion(.success(data))
-                case .failure(_):
-                    if let statusCode = response.response?.statusCode {
-                        switch statusCode {
-                        case 500...599:
-                            completion(.failure(.serverError))
-                        default:
-                            completion(.failure(.genericError))
-                        }
-                    } else {
-                        completion(.failure(.genericError))
-                    }
-                }
+  func performRequest<M: Decodable>(target: T) async throws -> M {
+       guard InternetReachability.shared.isInternetAvailable else {
+            throw AppErrorType.internetConnectionError
+        }
+        let request = try RequestBuilder.buildRequest(for: target)
+        
+        // 3. Execute Request
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+            
+            #if DEBUG
+            logResponse(data: data)
+            #endif
+            
+            return try validateAndDecode(data: data, response: response)
+            
+        } catch let error as AppErrorType {
+            throw error
+        } catch {
+            throw AppErrorType.genericError
+        }
+    }
+    
+    // MARK: - Private Helpers
+    
+    private func validateAndDecode<M: Decodable>(data: Data, response: URLResponse) throws -> M {
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw AppErrorType.genericError
+        }
+        
+        switch httpResponse.statusCode {
+        case 200...299:
+            return try JSONDecoder().decode(M.self, from: data)
+            
+        case 500...599:
+            throw AppErrorType.serverError
+            
+        default:
+            if let errorModel = try? JSONDecoder().decode(ErrorModel.self, from: data),
+               let message = errorModel.message?.value {
+                throw AppErrorType.responseError(message)
             }
-        } failCompletion: { [weak self] in
-            guard let self = self else { return }
-            completion(.failure(.internetConnectionError))
+            throw AppErrorType.genericError
+        }
+    }
+    
+    private func logResponse(data: Data) {
+        if let responseStr = String(data: data, encoding: .utf8) {
+            print("--- API RESPONSE ---")
+            print(responseStr)
+            print("--------------------")
         }
     }
 }

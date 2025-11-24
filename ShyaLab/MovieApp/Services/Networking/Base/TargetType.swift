@@ -6,14 +6,13 @@
 //
 
 import Foundation
-import Alamofire
-
 
 enum Task {
     
     /// A request with no additional data.
     case requestPlain
-
+    
+    case requestParameters(parameters: [String: Any])
 }
 
 protocol TargetType {
@@ -31,5 +30,5 @@ protocol TargetType {
     var task: Task { get }
     
     /// The headers to be used in the request.
-    var headers: [String: String] { get }
+    var headers: [String: String]? { get }
 }
