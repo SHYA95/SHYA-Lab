@@ -37,10 +37,8 @@ class RequestBuilder {
     
     /// Merges default parameters (Dates) with target specific parameters
     private static func prepareParameters(for target: TargetType) -> [String: Any] {
-        var parameters: [String: Any] = [
-            Constants.DATE_FROM: Utilities.getcurrentDate(),
-            Constants.DATE_TO: Utilities.getNextYearDate()
-        ]
+      var parameters: [String: Any] = [:]
+        parameters["api_key"] = Constant.apiKey
         
         if case .requestParameters(let specificParams) = target.task {
             parameters.merge(specificParams) { (_, new) in new }
