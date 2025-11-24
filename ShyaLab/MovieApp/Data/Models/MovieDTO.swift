@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MovieDTO: Decodable, DomainConvertible {
+struct MovieDTO: Codable, DomainConvertible {
     let id: Int
     let title: String?
     let originalTitle: String?
