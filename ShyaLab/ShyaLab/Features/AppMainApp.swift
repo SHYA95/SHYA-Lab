@@ -8,6 +8,7 @@
 
 import SwiftUI
 import SwiftUICombineApp
+import MovieApp
 
 @main
 struct AppMainApp: App {
@@ -17,6 +18,8 @@ struct AppMainApp: App {
         WindowGroup {
       //MARK: First module: Weather app (SwiftUI & Combine)
             SwiftUICombineAppView()
+      //MARK: Second module: Movies app (Uikit)
+            MovieAppView()
         }
     }
 }
