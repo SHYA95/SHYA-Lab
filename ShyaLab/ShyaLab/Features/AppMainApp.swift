@@ -17,7 +17,7 @@ struct AppMainApp: App {
     var body: some Scene {
         WindowGroup {
       //MARK: First module: Weather app (SwiftUI & Combine)
-            SwiftUICombineAppView()
+//            SwiftUICombineAppView()
       //MARK: Second module: Movies app (Uikit)
             MovieAppView()
         }
