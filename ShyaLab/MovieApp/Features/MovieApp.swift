@@ -11,6 +11,6 @@ public struct MovieAppView: View {
     public init() {}
     
     public var body: some View {
-        HomeView()
+        MoviesHomeViewController()
     }
 }
