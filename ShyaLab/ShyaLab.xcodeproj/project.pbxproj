@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2A1D88FE2E9A88DB0068538B /* SwiftUICombineApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1D88FD2E9A88DB0068538B /* SwiftUICombineApp.framework */; };
 		2A1D88FF2E9A88DB0068538B /* SwiftUICombineApp.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1D88FD2E9A88DB0068538B /* SwiftUICombineApp.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2A71A1C72ED50A770098D411 /* MovieApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A71A1C62ED50A770098D411 /* MovieApp.framework */; };
+		2A71A1C82ED50A770098D411 /* MovieApp.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A71A1C62ED50A770098D411 /* MovieApp.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				2A1D88FF2E9A88DB0068538B /* SwiftUICombineApp.framework in Embed Frameworks */,
+				2A71A1C82ED50A770098D411 /* MovieApp.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -47,6 +50,7 @@
 		2A228C162E95A718003CBF40 /* ShyaLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShyaLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A228C2F2E95A71A003CBF40 /* ShyaLabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShyaLabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A228C392E95A71A003CBF40 /* ShyaLabUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShyaLabUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A71A1C62ED50A770098D411 /* MovieApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MovieApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -86,6 +90,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A1D88FE2E9A88DB0068538B /* SwiftUICombineApp.framework in Frameworks */,
+				2A71A1C72ED50A770098D411 /* MovieApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +114,7 @@
 		2A1D88FC2E9A88DB0068538B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2A71A1C62ED50A770098D411 /* MovieApp.framework */,
 				2A1D88FD2E9A88DB0068538B /* SwiftUICombineApp.framework */,
 			);
 			name = Frameworks;

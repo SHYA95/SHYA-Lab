@@ -11,15 +11,12 @@ import Foundation
 /// That contains any constant.
 ///
 enum Constant {
-    
     /// BaseURL for requests.
-    //
-    
-      static let baseURL = "https://api.weatherstack.com/current?access_key={PASTE_YOUR_API_KEY_HERE}&query=New Delhi"
+    static let baseURL = "https://api.themoviedb.org/3"
+    static let apiKey = "e1858081d9a32ad5c519d4474d950555"
+    static let imageBaseURL = "https://image.tmdb.org/t/p/w500"
  
 }
-
-
 
 /// Status for download data.
 ///
@@ -27,10 +24,7 @@ enum DownloadStatus<Success, Failure> where Failure: Error {
     case progress(progress: Progress)
     case success(url: URL?)
     case failure(_ : Failure)
-    
 }
-
-
 
 /// Any model to be converted to domain should conform to the same protocol.
 ///
@@ -41,8 +35,6 @@ protocol DomainConvertible {
     ///
     func toDomain() -> DomainType
 }
-
-
 
 /// Any model to be converted to dictionary to send it as body in request.
 ///
