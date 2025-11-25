@@ -30,7 +30,7 @@ enum MoviesEndpoint: TargetType {
         return .get
     }
     
-    var task: Task {
+    var task: NetworkTask {
        switch self {
         case .nowPlaying, .popular, .upcoming:
             return .requestParameters(parameters: ["language": "en-US", "page": 1])
