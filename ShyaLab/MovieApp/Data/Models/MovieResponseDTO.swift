@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MovieResponseDTO: Decodable {
+struct MovieResponseDTO: Codable {
     let page: Int
     let results: [MovieDTO]
 }

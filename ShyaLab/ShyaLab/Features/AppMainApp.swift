@@ -19,7 +19,7 @@ struct AppMainApp: App {
       //MARK: First module: Weather app (SwiftUI & Combine)
 //            SwiftUICombineAppView()
       //MARK: Second module: Movies app (Uikit)
-            MovieAppView()
+            MovieAppView().ignoresSafeArea()
         }
     }
 }
