@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Task {
+enum NetworkTask {
     
     /// A request with no additional data.
     case requestPlain
@@ -27,7 +27,7 @@ protocol TargetType {
     var method: HTTPMethod { get }
     
     /// The type of HTTP task to be performed.
-    var task: Task { get }
+    var task: NetworkTask { get }
     
     /// The headers to be used in the request.
     var headers: [String: String]? { get }
